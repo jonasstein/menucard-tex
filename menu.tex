@@ -16,7 +16,13 @@
 \usepackage{graphicx}
 \graphicspath{{gfx/}}
 
-\newcommand{\meal}[4]{\textbf{#1}\hspace{3mm}#2 \textsuperscript{#3}\hfill\SI{#4}{\EUR}\newline}
+\newcommand{\meal}[4]{\textbf{#1}\hspace{3mm}%
+\begin{minipage}[t]{5.5 cm}
+\begin{flushleft}
+#2\textsuperscript{#3}
+\end{flushleft}
+\end{minipage}%
+\hfill\SI{#4}{\EUR}\newline}
 
 % Allergen-Verzeichnis
 \newcommand{\Getreideprodukte}{a}
@@ -45,56 +51,114 @@
   pdfnewwindow=true
 }
 
-{\Huge Yen Yen Asia Express}\\
+\begin{center}
+\includegraphics[width=\textwidth]{gfx/yenyen_head}
+\includegraphics[width=\textwidth]{gfx/Asia_Spezialitaeten}
+\end{center}
+
+% {\Huge Yen Yen Asia Express}\\
 {\small Stand vom \today}\\
 
 
-Alte Poststraße 34\newline
-53840 Troisdorf\\
 
-Sonn- und Feiertags geschlossen\\
+Reservierungen und Vorbestellungen für Selbstabholer
 
 {\Huge 02241 / 126 87 72}
+
+Sonn- und Feiertags geschlossen\\
 
 \section*{Erste Stärkung}
 diese Gerichte sind schnell zubereitet und 
 auch als Vorspeise oder Hauptgericht sehr beliebt
 \begin{flushleft}
-\meal{X1}{Gebratene Nudeln mit Gemüse}{\Fisch}{4.90}
-\meal{X2}{Gebratenen Reis mit Gemüse}{\Fisch}{4.80}
-\meal{X3}{6 Mini-Frühlingsrollen, süßsauer}{\Fisch}{4.40}
-\meal{X4}{Gemüsesuppe}{\Sellerie}{2.60}
-\meal{X5}{Gemüsesuppe mit Hühnerfleich}{\Soja,\Sellerie}{3.20}
+\meal{X1}{6 Mini-Frühlingsrollen, süßsauer}{\Getreideprodukte, \Soja}{2.00}
+\meal{X2}{Pekingsuppe}{\Eier, \Getreideprodukte}{2.00}
+\meal{X3}{Gebratener Reis mit Gemüse und Hühnerfleich}{\Soja \Eier \Getreideprodukte}{4.90}
+\meal{X4}{Gebratene Nudeln mit Gemüse und Hühnerfleich}{\Soja \Eier \Getreideprodukte}{4.90}
 \end{flushleft}
+
+\section*{Vorspeisen}
+\meal{X1}{6 Mini-Frühlingsrollen, süßsauer}{\Getreideprodukte, \Soja}{2.00}
+\meal{X1}{Zwei vietnamesische Frühlingsrollen, hausgemacht, süßsauer}{\Getreideprodukte, \Soja, \Eier, \Sellerie}{3.50}
+\meal{X1}{Zwei vietnamesische Frühlingsrollen, hausgemacht, pikant}{\Getreideprodukte, \Soja, \Eier, \Sellerie}{3.50}
+\meal{X1}{Eine chinesische Frühlingsrolle, hausgemacht, süßsauer}{\Getreideprodukte, \Soja, \Eier, \Sellerie}{3.50}
+\meal{X1}{Eine chinesische Frühlingsrolle, hausgemacht, pikant}{\Getreideprodukte, \Soja, \Eier, \Sellerie}{3.50}
+
+\meal{X2}{Krabbenchips}{\Krebstiere, \Fisch, \Getreideprodukte}{1.50}
+\meal{X2}{Vegetarische Krabbenchips aus Suesskartoffeln}{\Getreideprodukte}{1.90}
+\meal{X2}{Gebackene Wantan, süßsauer}{\Eier, \Soja,\Getreideprodukte,\Sellerie}{2.90}
+
+\meal{X2}{Gebackener Brokkoli}{\Soja,\Getreideprodukte,\Sellerie,\Eier}{2.90}
+\section*{Suppen}
+
+\meal{X2}{Pekingsuppe mit Hühnerfleich}{\Soja,\Getreideprodukte,\Sellerie,\Eier}{2.00}
+\meal{X2}{Wantansuppe}{\Soja,\Getreideprodukte,\Eier}{2.00}
+\meal{X2}{Gemüsesuppe mit Hühnerfleich}{\Soja}{3.50}
+\meal{X2}{Gemüsesuppe mit Glasnudeln}{\Soja\Getreideprodukte}{3.50}
+\meal{X2}{Vegetarische Gemüsesuppe mit Tofu}{\Soja\Getreideprodukte\Lupinen}{3.50}
+
+
+\section*{Hühnerfleisch}
+\meal{R1}{gebraten mit gebratenem Reis}{\Getreideprodukte,\Eier,\Soja}{4.90}
+\meal{R1}{gebraten mit gebratenen Nudeln}{\Getreideprodukte,\Eier,\Soja}{4.90}
+
+\meal{R1}{gebraten in Currysoße mit Kokosmilch}{\Laktose, \Getreideprodukte}{6.90}
+\meal{R1}{auf Thai Art, scharf mit Kokosmilch}{\Getreideprodukte, \Soja}{6.90}
+\meal{R1}{gebraten mit Bambus und Morcheln}{\Getreideprodukte, \Soja}{6.90}
+\meal{R1}{gebraten mit Gemüse der Saison}{\Getreideprodukte, \Soja}{6.90}
+\meal{R1}{im Teigmantel gebacken mit Gemüse und Reis, süßsauer}{\Eier \Getreideprodukte, \Soja, \Sellerie}{6.90}
+\meal{R1}{im Teigmantel gebacken mit Gemüse und Reis, pikant}{\Eier \Getreideprodukte, \Soja}{6.90}
+
+\meal{R1}{gebraten mit Gemüse in süßsaurer Soße}{\Getreideprodukte, \Sellerie}{6.90}
+\meal{R1}{gebraten mit Gemüse und Reis, pikant}{\Getreideprodukte, \Soja}{6.90}
+
+\meal{R1}{Kung Bao art, pikant}{\Getreideprodukte, \Nuss, \Soja}{6.90}
+
+\meal{R1}{mit Brokkoli und Knoblauch}{\Getreideprodukte, \Nuss, \Soja}{6.90}
+
+\meal{R1}{mit Ingwer und Zitronengras}{\Getreideprodukte, \Soja}{6.90}
+%Thịt nướng xâu
+\meal{R1}{als Saté Spieße süßsauer}{\Getreideprodukte, \Sellerie}{7.90}
+\meal{R1}{als Saté Spieße mit Erdnußsoße}{\Getreideprodukte, \Soja, \Erdnuss, \Laktose}{8.90}
+\meal{R1}{als Saté Spieße mit spezial Hoisin-Sauce}{\Getreideprodukte, \Soja, \Sesamsamen, \Laktose}{9.90}
+
 
 \section*{Spezialitäten vom Rind}
 zartes Rinderfilet in Streifen geschnitten und kurz angebraten
 \begin{flushleft}
-\meal{R1}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R2}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R3}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R4}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R5}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
+\meal{R1}{pikant mit Reis}{\Getreideprodukte, \Soja}{8.90}
+\meal{R2}{mit Zwiebeln und Sellerie und Reis}{\Getreideprodukte, \Soja, \Sellerie}{8.90}
+\meal{R3}{mit chinesischen schwarzen Bohnen und Reis}{\Getreideprodukte, \Soja, \Laktose}{8.90}
+\meal{R4}{mit Zitronengras und Reis}{\Getreideprodukte, \Soja}{8.90}
+\meal{R5}{mit Gemüse und Reis}{\Getreideprodukte, \Soja}{8.90}
+\meal{R6}{mit Champignons, Zwiebeln und Reis}{\Getreideprodukte, \Soja}{8.90}
+\meal{R7}{Thai Art mit Kokosmilch, scharf}{\Laktose}{8.90}
 \end{flushleft}
-
-
-\section*{Spezialitäten vom Rind}
-\meal{R1}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R2}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R3}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R4}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R5}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-
-\section*{Spezialitäten vom Rind}
-\meal{R1}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R2}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R3}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R4}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R5}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
 
 \section*{Kross gebratenes Entenbrustfilet}
 in einer knusprigen Hülle frisch gebraten serviert
-\meal{E1}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
+\begin{flushleft}
+\meal{E1}{mit Gemüse und süßsaurer Soße}{\Senf,\Erdnuss}{8.90}
+\meal{E2}{mit Gemüse und pikanter Soße}{\Senf,\Erdnuss}{8.90}
+\meal{E3}{mit Gemüse und Erdnuss Soße}{\Senf,\Erdnuss}{9.90}
+\meal{E4}{mit Gemüse und Thaisoße}{\Senf,\Erdnuss}{9.90}
+\end{flushleft}
+
+\section*{Spezialitäten aus dem Wasser}
+\begin{flushleft}
+\meal{W1}{Norwegischer Premium Lachs mit Gemüse der Saison}{\Fisch, \Getreideprodukte, \Soja, \Krebstiere}{9.90}
+\meal{W1}{Norwegischer Premium Lachs mit Gemüse der Saison in Curry-Soße}{\Fisch, \Getreideprodukte, \Laktose, \Krebstiere}{11.90}
+\meal{W1}{Norwegischer Premium Lachs mit Kung Bao-Soße}{\Fisch, \Getreideprodukte, \Laktose, \Nuss, \Soja}{11.90}
+\meal{W1}{Garnelen Kung Bao Art, scharf}{\Fisch, \Getreideprodukte, \Soja, \Nuss, \Krebstiere}{8.90}
+\meal{W1}{Garnelen im Teigmantel}{\Eier \Fisch, \Getreideprodukte, \Soja, \Laktose, \Krebstiere}{8.90}
+\meal{W1}{Garnelen mit Ingwer und Zitronengras}{\Fisch, \Getreideprodukte, \Soja, \Krebstiere}{8.90}
+\meal{W1}{Garnelen mit gebratenen Nudeln}{\Fisch, \Getreideprodukte, \Soja, \Krebstiere}{8.90}
+\meal{W1}{Garnelen mit mit Gemüse der Saison und Reis}{\Fisch, \Getreideprodukte, \Soja, \Krebstiere}{8.90}
+\end{flushleft}
+
+\section*{Yen-Yen Menue}
+\meal{W1}{Ueberaschungsgericht}{\Laktose, \Getreideprodukte, \Soja, \Nuss, \Sesamsamen, \Sellerie}{8.90}
+\meal{W1}{Ueberaschungsgericht mit Ente}{\Laktose, \Getreideprodukte, \Soja, \Nuss, \Sesamsamen, \Sellerie}{10.90}
 
 
 \section*{Extras} 
@@ -102,9 +166,14 @@ in einer knusprigen Hülle frisch gebraten serviert
 \meal{+Nudeln}{gebratene Nudeln als Beilage extra}{~}{1.80}
 \meal{+S}{auf Wunsch bereiten wir Ihr Gericht scharf zu}{\Fisch}{0.00}
 
+\section*{Für Kreative}
+Stellen Sie sich Ihr Lieblingsgericht aus folgenden Zutaten selbst zusammen:
+Reis, gebratene Nudeln, Bambus, Brokkoli, Cashewkerne, Ingwer, Zwiebeln, Knoblauch,
+Rindfleisch, gebratene Ente, Hühnerfleisch
+
 \section*{Nachspeisen} 
-\meal{N1}{frisch gebackene Banane mit Honig}{\Fisch}{2.50}
-\meal{N2}{Vanilleeis mit Früchten garniert}{\Fisch}{2.90}
+\meal{N1}{frisch gebackene Banane mit Honig}{\Getreideprodukte, \Eier}{2.50}
+\meal{N2}{Vanilleeis mit Früchten garniert}{\Laktose}{2.90}
 
 \vspace{0.5cm}
 %\newpage
@@ -131,10 +200,12 @@ in einer knusprigen Hülle frisch gebraten serviert
 \meal{A2}{Gaffel Kölsch}{~}{1.90}
 \meal{A3}{Pflaumenwein}{~}{1.90}
 
-\section*{Für Kreative}
-Stellen Sie sich Ihr Lieblingsgericht aus folgenden Zutaten selbst zusammen:
-Reis, gebratene Nudeln, Bambus, Brokkoli, Cashewkerne, Ingwer, Zwiebeln, Knoblauch,
-Rindfleisch, gebratene Ente, Hühnerfleisch
+\section*{Getränke zum Mitnehmen}
+\meal{A1}{Bitburger Pils}{~}{1.90}
+\meal{A2}{Gaffel Kölsch}{~}{1.90}
+
+
+
 
 
 \newpage
@@ -163,8 +234,16 @@ auch bei unseren Mitarbeitern.\\
 \textbf{Gerne passt unser Koch das Rezept auf Ihre Bedürfnisse an.}
 
 \section*{Partyservice}
-Sie möchten Ihre Gäste in Ihrer Location mit gesunden asiatischen Speisen verwöhnen? Sprechen Sie uns an, wir beraten Sie gern.
+Sie möchten Ihre Gäste in Ihrer Location mit gesunden asiatischen Speisen verwöhnen?\\ 
+Sprechen Sie uns an, wir beraten Sie gern.
+
+\newpage
+\section*{Lage in der Troisdorfer Innenstadt}
+Alte Poststraße 34\newline
+53840 Troisdorf
+
+\begin{center}
+\includegraphics[width=\textwidth]{gfx/map/rect28239c}
+\end{center}
 
 \end{document}
-
-
