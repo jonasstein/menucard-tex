@@ -16,7 +16,13 @@
 \usepackage{graphicx}
 \graphicspath{{gfx/}}
 
-\newcommand{\meal}[4]{\textbf{#1}\hspace{3mm}#2 \textsuperscript{#3}\hfill\SI{#4}{\EUR}\newline}
+\newcommand{\meal}[4]{\textbf{#1}\hspace{3mm}%
+\begin{minipage}[t]{5.5 cm}
+\begin{flushleft}
+#2\textsuperscript{#3}
+\end{flushleft}
+\end{minipage}%
+\hfill\SI{#4}{\EUR}\newline}
 
 % Allergen-Verzeichnis
 \newcommand{\Getreideprodukte}{a}
@@ -45,16 +51,21 @@
   pdfnewwindow=true
 }
 
-{\Huge Yen Yen Asia Express}\\
+\begin{center}
+\includegraphics[width=\textwidth]{gfx/yenyen_head}
+\includegraphics[width=\textwidth]{gfx/Asia_Spezialitaeten}
+\end{center}
+
+% {\Huge Yen Yen Asia Express}\\
 {\small Stand vom \today}\\
 
 
-Alte Poststraße 34\newline
-53840 Troisdorf\\
 
-Sonn- und Feiertags geschlossen\\
+Reservierungen und Vorbestellungen für Selbstabholer
 
 {\Huge 02241 / 126 87 72}
+
+Sonn- und Feiertags geschlossen\\
 
 \section*{Erste Stärkung}
 diese Gerichte sind schnell zubereitet und 
@@ -67,6 +78,15 @@ auch als Vorspeise oder Hauptgericht sehr beliebt
 \meal{X5}{Gemüsesuppe mit Hühnerfleich}{\Soja,\Sellerie}{3.20}
 \end{flushleft}
 
+
+\section*{Hünerfleisch}
+\meal{R1}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
+\meal{R2}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
+\meal{R3}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
+\meal{R4}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
+\meal{R5}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
+
+
 \section*{Spezialitäten vom Rind}
 zartes Rinderfilet in Streifen geschnitten und kurz angebraten
 \begin{flushleft}
@@ -78,24 +98,12 @@ zartes Rinderfilet in Streifen geschnitten und kurz angebraten
 \end{flushleft}
 
 
-\section*{Spezialitäten vom Rind}
-\meal{R1}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R2}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R3}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R4}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R5}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-
-\section*{Spezialitäten vom Rind}
-\meal{R1}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R2}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R3}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R4}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-\meal{R5}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-
 \section*{Kross gebratenes Entenbrustfilet}
 in einer knusprigen Hülle frisch gebraten serviert
-\meal{E1}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{4.90}
-
+\meal{E1}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{8.90}
+\meal{E2}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{8.90}
+\meal{E3}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{8.90}
+\meal{E3}{mit chinesischen schwarzen Bohnen}{\Senf,\Erdnuss}{8.90}
 
 \section*{Extras} 
 \meal{+Reis}{gebratenen Reis als Beilage extra}{~}{1.80}
@@ -131,6 +139,11 @@ in einer knusprigen Hülle frisch gebraten serviert
 \meal{A2}{Gaffel Kölsch}{~}{1.90}
 \meal{A3}{Pflaumenwein}{~}{1.90}
 
+\section*{Getränke zum Mitnehmen}
+\meal{A1}{Bitburger Pils}{~}{1.90}
+\meal{A2}{Gaffel Kölsch}{~}{1.90}
+
+
 \section*{Für Kreative}
 Stellen Sie sich Ihr Lieblingsgericht aus folgenden Zutaten selbst zusammen:
 Reis, gebratene Nudeln, Bambus, Brokkoli, Cashewkerne, Ingwer, Zwiebeln, Knoblauch,
@@ -163,8 +176,16 @@ auch bei unseren Mitarbeitern.\\
 \textbf{Gerne passt unser Koch das Rezept auf Ihre Bedürfnisse an.}
 
 \section*{Partyservice}
-Sie möchten Ihre Gäste in Ihrer Location mit gesunden asiatischen Speisen verwöhnen? Sprechen Sie uns an, wir beraten Sie gern.
+Sie möchten Ihre Gäste in Ihrer Location mit gesunden asiatischen Speisen verwöhnen?\\ 
+Sprechen Sie uns an, wir beraten Sie gern.
+
+\newpage
+\section*{Lage in der Troisdorfer Innenstadt}
+Alte Poststraße 34\newline
+53840 Troisdorf
+
+\begin{center}
+\includegraphics[width=\textwidth]{gfx/map/rect28239c}
+\end{center}
 
 \end{document}
-
-
