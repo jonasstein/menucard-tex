@@ -1,5 +1,6 @@
 %Ich habe hie nur mal zu testzwecken einen sinnlosen Kommentar eingefuegt!
-\documentclass[a4paper,10pt,notumble]{leaflet}
+%\documentclass[a4paper,10pt,notumble]{leaflet}
+\documentclass[12pt,a5paper,oneside]{scrreprt}
 \usepackage[utf8]{inputenc}
 
 \usepackage[scaled]{helvet}
@@ -18,16 +19,16 @@
 
 \usepackage{titlesec}
 
-\newcommand{\largemenuonly}[1]{}
-\newcommand{\smallmenuonly}[1]{#1}
+\newcommand{\largemenuonly}[1]{#1}
+\newcommand{\smallmenuonly}[1]{}
 
 \newcommand{\meal}[4]{\textbf{#1}\hspace{3mm}%
-\begin{minipage}[t]{5.5 cm}
+\begin{minipage}[t]{8 cm}
 \begin{flushleft}
 #2\textsuperscript{#3}
 \end{flushleft}
 \end{minipage}%
-\hfill\SI{#4}{\EUR}\\[0.3mm]}
+\hfill\SI{#4}{\EUR}\\[2mm]}
 
 \titlespacing*{\section}{0pt}{3mm}{2mm}
 %\titlespacing*{<command>}{<left>}{<before-sep>}{<after-sep>}
@@ -48,6 +49,9 @@
 \newcommand{\Weichtiere}{m} 
 \newcommand{\Erdnuss}{n} 
 
+
+
+
 \begin{document} 
 \hypersetup{
   pdftitle={Speisekarte Yen Yen},  
@@ -61,17 +65,22 @@
 \end{center}
 
 % {\Huge Yen Yen Asia Express}\\
-{\small Stand vom \today}\\[4mm]
+{\small Stand vom \today}\\[5mm]
 Unser Restaurant hat an Sonn- und Feiertagen geschlossen. Reservierungen und Vorbestellungen für Selbstabholer unter
 \begin{center}
 {\Huge 02241 / 126 87 72}
 \end{center}
+
 \textbf{Alle Gerichte werden ohne Glutamat zubereitet.}
+
 \section*{Partyservice}
 Sie möchten Ihre Gäste in Ihrer Location mit gesunden, asiatischen Speisen verwöhnen?\\ 
 Sprechen Sie uns an, wir beraten Sie gern.
+\newpage
 \input{meals}
-%\newpage
+\input{vmeals}
+
+\newpage
 \section*{Allergenkennzeichnung}
 \begin{verbatim}
 nach EU-Lebensmittelinformationsverordnung
@@ -99,4 +108,5 @@ auch bei unseren Mitarbeitern.\\
 \begin{center}
 \includegraphics[width=1.0\textwidth]{gfx/map/tdfcity}\\
 \end{center}
+
 \end{document}
