@@ -1,35 +1,44 @@
-%Ich habe hie nur mal zu testzwecken einen sinnlosen Kommentar eingefuegt!
+% !TeX program = lualatex
+% !TeX root = menu.tex
+% !TeX spellcheck = de_DE
 \documentclass[a4paper,10pt,notumble]{leaflet}
-\usepackage[utf8]{inputenc}
-
-\usepackage[scaled]{helvet}
+\usepackage{fontspec}% for lualatex
+\usepackage{polyglossia}
+\setdefaultlanguage[]{german}
+\setotherlanguage[]{german}
+%\usepackage[scaled]{helvet}
 \renewcommand\familydefault{\sfdefault} 
-\usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
 %\usepackage{setspace}
-\usepackage{hyperref}
 \usepackage{siunitx}
 \sisetup{locale = DE}
 \DeclareSIUnit[number-unit-product = { } ]
 	\EUR{EUR}
 
 \usepackage{graphicx}
-\graphicspath{{gfx/}}
+
+%\usepackage{fontawesome}
+% fix the wrong symbols
+%\renewcommand{\faHourglass}[1][]{%
+%	\faicon{hourglass\if\relax\detokenize{#1}\relax\else-#1\fi}%
+%}
 
 \usepackage{titlesec}
+\usepackage{hyperref}
+
+\newcommand{\slow}{\faHourglass}
 
 \newcommand{\largemenuonly}[1]{}
 \newcommand{\smallmenuonly}[1]{#1}
 
 \newcommand{\meal}[4]{\textbf{#1}\hspace{3mm}%
-\begin{minipage}[t]{5.5 cm}
+\begin{minipage}[t]{5.7 cm}
 \begin{flushleft}
-#2\textsuperscript{#3}
+#2\textsuperscript{ #3}
 \end{flushleft}
 \end{minipage}%
 \hfill\SI{#4}{\EUR}\\[0.3mm]}
 
-\titlespacing*{\section}{0pt}{3mm}{2mm}
+\titlespacing*{\section}{0pt}{2mm}{0mm}
 %\titlespacing*{<command>}{<left>}{<before-sep>}{<after-sep>}
 
 % Allergen-Verzeichnis
@@ -62,40 +71,44 @@
 
 % {\Huge Yen Yen Asia Express}\\
 {\small Stand vom \today}\\[4mm]
-Unser Restaurant hat an Sonn- und Feiertagen geschlossen. Reservierungen und Vorbestellungen für Selbstabholer unter
+Unser Restaurant hat an Sonn- und Feiertagen geschlossen. \mbox{Reservierungen} und Vorbestellungen für Selbstabholer unter
 \begin{center}
-{\Huge 02241 / 126 87 72}
+{\Huge 02241 / 126 87 72}\\
+\textbf{Wir kochen ohne Glutamat.}
 \end{center}
-\textbf{Alle Gerichte werden ohne Glutamat zubereitet.}
+
 \section*{Partyservice}
 Sie möchten Ihre Gäste in Ihrer Location mit gesunden, asiatischen Speisen verwöhnen?\\ 
 Sprechen Sie uns an, wir beraten Sie gern.
 \input{meals}
 %\newpage
+%\vspace{6mm}
 \section*{Allergenkennzeichnung}
-\begin{verbatim}
-nach EU-Lebensmittelinformationsverordnung
-a Getreideprodukte (glutenhaltig) 
-b Fisch
-c Krebstiere
-d Schwefeldioxide und Sulfite 
-e Sellerie
-f Milch und Laktose
-g Sesamsamen
-h Nüsse
-i Eier
-j Lupinen
-k Senf
-l Soja
-m Weichtiere
-n Erdnüsse
-\end{verbatim}
+%\begin{verbatim}
+nach EU-Lebensmittelinformationsverordnung: 
+\textbf{a} Getreideprodukte (glutenhaltig), 
+\textbf{b} Fisch,
+\textbf{c} Krebstiere,
+\textbf{d} Schwefeldioxide und Sulfite,
+\textbf{e} Sellerie,
+\textbf{f} Milch und Laktose,
+\textbf{g} Sesamsamen,
+\textbf{h} Nüsse,
+\textbf{i} Eier,
+\textbf{j} Lupinen,
+\textbf{k} Senf,
+\textbf{l} Soja,
+\textbf{m} Weichtiere,
+\textbf{n} Erdnüsse. 
+%\end{verbatim}
+
 Informationen über Zutaten in unseren Speisen, die Allergien
 oder Unverträglichkeiten auslösen können, erhalten Sie auf Nachfrage
-auch bei unseren Mitarbeitern.\\ 
+auch bei unseren Mitarbeitern.\\
 \textbf{Gerne passt unser Koch das Rezept auf Ihre Bedürfnisse an.} %
+%\vspace{4mm}
 %\newpage
-%\section*{Lage in der Troisdorfer Innenstadt}
+\section*{Lage in der Troisdorfer Innenstadt}
 \begin{center}
 \includegraphics[width=1.0\textwidth]{gfx/map/tdfcity}\\
 \end{center}

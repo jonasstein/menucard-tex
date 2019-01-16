@@ -1,12 +1,15 @@
-%Ich habe hie nur mal zu testzwecken einen sinnlosen Kommentar eingefuegt!
+% !TeX program = lualatex
+% !TeX root = menua5.tex
+% !TeX spellcheck = de_DE
 %\documentclass[a4paper,10pt,notumble]{leaflet}
 \documentclass[12pt,a5paper,oneside]{scrreprt}
-\usepackage[utf8]{inputenc}
 
 \usepackage[scaled]{helvet}
 \renewcommand\familydefault{\sfdefault} 
-\usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
+\usepackage{fontspec}% for lualatex
+\usepackage{polyglossia}
+\setdefaultlanguage[]{german}
+\setotherlanguage[]{german}
 %\usepackage{setspace}
 \usepackage{hyperref}
 \usepackage{siunitx}
@@ -15,7 +18,6 @@
 	\EUR{EUR}
 
 \usepackage{graphicx}
-\graphicspath{{gfx/}}
 
 \usepackage{titlesec}
 
@@ -71,13 +73,13 @@
 {\small Stand vom \today}\\[5mm]
 Unser Restaurant hat an Sonn- und Feiertagen geschlossen. Reservierungen und Vorbestellungen für Selbstabholer unter
 \begin{center}
-{\Huge 02241 / 126 87 72}
+{\Huge 02241 / 126 87 72}\\[4mm]
+
+\textbf{Wir kochen ohne Glutamat.}
 \end{center}
 
-\textbf{Alle Gerichte werden ohne Glutamat zubereitet.}
-
 \section*{Partyservice}
-Sie möchten Ihre Gäste in Ihrer Location mit gesunden, asiatischen Speisen verwöhnen?\\ 
+Sie möchten Ihre Gäste in Ihrer Location mit gesunden, \mbox{asiatischen} Speisen verwöhnen?\\ 
 Sprechen Sie uns an, wir beraten Sie gern.
 \newpage
 \input{meals}
@@ -110,8 +112,8 @@ auch bei unseren Mitarbeitern.\\
 %\begin{center}
 %\includegraphics[width=1.0\textwidth]{gfx/map/tdfcity}\\
 %\end{center}
-\newpage
-.
-\newpage
-.
+%\newpage
+%.
+%\newpage
+%.
 \end{document}
