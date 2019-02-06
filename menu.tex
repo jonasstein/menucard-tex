@@ -5,85 +5,98 @@
 \usepackage{fontspec}% for lualatex
 \usepackage{polyglossia}
 \setdefaultlanguage[]{german}
-\setotherlanguage[]{german}
+%\setotherlanguage[]{german}
 %\usepackage[scaled]{helvet}
-\renewcommand\familydefault{\sfdefault} 
 %\usepackage{setspace}
+\usepackage{ragged2e}
 \usepackage{siunitx}
 \sisetup{locale = DE}
+\sisetup{detect-family}
 \DeclareSIUnit[number-unit-product = { } ]
-	\EUR{EUR}
+\EUR{€}
 
 \usepackage{graphicx}
+\usepackage{xcolor}
+\definecolor{Myblack}{rgb}{.0,.0,.0}
 
-%\usepackage{fontawesome}
-% fix the wrong symbols
-%\renewcommand{\faHourglass}[1][]{%
-%	\faicon{hourglass\if\relax\detokenize{#1}\relax\else-#1\fi}%
-%}
-
+%\renewcommand\familydefault{\sfdefault} 
 \usepackage{titlesec}
+\defaultfontfeatures{Ligatures=TeX}
+\titleformat*{\section}{\large\bfseries\sffamily\color{Myblack}}
+%\titleformat*{\subsection}{\large\bfseries\sffamily\color{MSLightBlue}}
+%\titleformat*{\subsubsection}{\itshape\subsubsectionfont}
+
+% \titlespacing*{<command>}{<left>}{<before-sep>}{<after-sep>}
+\titlespacing*{\section}
+{0pt}{1ex plus 4ex minus .2ex}{2.5ex plus .2ex}
+\titlespacing*{\subsubsection}
+{0pt}{0.7ex plus 1.5ex minus .2ex}{4.3ex plus .2ex}
+
 \usepackage{hyperref}
 
-\newcommand{\slow}{\faHourglass}
+\newcommand{\slow}{\includegraphics[height=10pt]{gfx/hourglass.pdf}\xspace}
+\newcommand{\hotpepper}{\includegraphics[height=10pt]{gfx/hot_pepper.pdf}\xspace}
 
 \newcommand{\largemenuonly}[1]{}
 \newcommand{\smallmenuonly}[1]{#1}
 
-\newcommand{\meal}[4]{\textbf{#1}\hspace{3mm}%
-\begin{minipage}[t]{5.7 cm}
+\newcommand{\meal}[4]{%
+\begin{minipage}[t]{9 mm}
+	\begin{flushleft}
+        \textbf{#1}
+	\end{flushleft}
+\end{minipage}%
+\begin{minipage}[t]{61 mm}
 \begin{flushleft}
 #2\textsuperscript{ #3}
 \end{flushleft}
 \end{minipage}%
 \hfill\SI{#4}{\EUR}\\[0.3mm]}
 
-\titlespacing*{\section}{0pt}{2mm}{0mm}
+\titlespacing*{\section}{0pt}{1.5mm}{0mm}
 %\titlespacing*{<command>}{<left>}{<before-sep>}{<after-sep>}
 
-% Allergen-Verzeichnis
-\newcommand{\Getreideprodukte}{a}
-\newcommand{\Fisch}{b}
-\newcommand{\Krebstiere}{c}
-\newcommand{\Schwefel}{d} 
-\newcommand{\Sellerie}{e} 
-\newcommand{\Laktose}{f} 
-\newcommand{\Sesamsamen}{g} 
-\newcommand{\Nuss}{h} 
-\newcommand{\Eier}{i} 
-\newcommand{\Lupinen}{j} 
-\newcommand{\Senf}{k} 
-\newcommand{\Soja}{l} 
-\newcommand{\Weichtiere}{m} 
-\newcommand{\Erdnuss}{n} 
+\input{allergene.tex}
+
+\usepackage[xspace]{ellipsis}
+\renewcommand{\ellipsisgap}{0.04em}
+
 
 \begin{document} 
+\RaggedRight
 \hypersetup{
   pdftitle={Speisekarte Yen Yen},  
   pdfsubject={Speisekarte},
-  pdfauthor={Jonas Stein}
+  pdfauthor={Yen Yen}
   pdfnewwindow=true
 }
 
 \begin{center}
-\includegraphics[width=\textwidth]{gfx/yenyen_head_bw_text.png}
+\includegraphics[width=\textwidth]{gfx/dragon_raw4_ready.jpg}\\[2mm]%
+\large{\textbf{Yen Yen - asiatische Spezialitäten}}%\includegraphics[width=0.5\textwidth]{gfx/asiatische_spez.png}%
+\end{center}%
+
+\begin{center}
+{\small Stand \today}\\[2mm]
+%Format der Telefonnummer gem. Duden (falls mal einer fragt)
+%:) 
+Speisen zur Mitnahme und Tischreservierungen: \textbf{02241 1268772}\\[1mm]
+Montags Ruhetag\\[1mm]
+Für Ihre Feier bieten wir Ihnen gerne unseren \textbf{Partyservice} an.\\[2mm]
+Alle unsere Speisen werden von uns frisch hausgemacht und sind frei von Zusatzstoffen und Geschmacksverstärkern (Glutamat).\\[2mm]
+\slow = aufwändig, längere Zubereitungszeit\\
+\hotpepper = leicht scharf \quad \quad \hotpepper\hotpepper = scharf
+\end{center}%
+
+\section*{Lage in der Troisdorfer Innenstadt}
+\begin{center}
+	\includegraphics[width=1.0\textwidth]{gfx/map/tdfcity}
 \end{center}
 
-% {\Huge Yen Yen Asia Express}\\
-{\small Stand vom \today}\\[4mm]
-Unser Restaurant hat an Sonn- und Feiertagen geschlossen. \mbox{Reservierungen} und Vorbestellungen für Selbstabholer unter 02241 / 126 87 72\\
-
-\textbf{Wir kochen ohne Glutamat.}
-\end{center}
-
-\section*{Partyservice}
-Sie möchten Ihre Gäste in Ihrer Location mit gesunden, asiatischen Speisen verwöhnen?\\ 
-Sprechen Sie uns an, wir beraten Sie gern.
 \input{meals}
 %\newpage
 %\vspace{6mm}
 \section*{Allergenkennzeichnung}
-%\begin{verbatim}
 nach EU-Lebensmittelinformationsverordnung: 
 \textbf{a} Getreideprodukte (glutenhaltig), 
 \textbf{b} Fisch,
@@ -99,7 +112,6 @@ nach EU-Lebensmittelinformationsverordnung:
 \textbf{l} Soja,
 \textbf{m} Weichtiere,
 \textbf{n} Erdnüsse. 
-%\end{verbatim}
 
 Informationen über Zutaten in unseren Speisen, die Allergien
 oder Unverträglichkeiten auslösen können, erhalten Sie auf Nachfrage
@@ -107,8 +119,5 @@ auch bei unseren Mitarbeitern.\\
 \textbf{Gerne passt unser Koch das Rezept auf Ihre Bedürfnisse an.} %
 %\vspace{4mm}
 %\newpage
-\section*{Lage in der Troisdorfer Innenstadt}
-\begin{center}
-\includegraphics[width=1.0\textwidth]{gfx/map/tdfcity}\\
-\end{center}
+
 \end{document}
