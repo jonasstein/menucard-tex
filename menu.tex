@@ -7,19 +7,27 @@
 \setdefaultlanguage[]{german}
 %\setotherlanguage[]{german}
 %\usepackage[scaled]{helvet}
+
 %\usepackage{setspace}
+\usepackage[official]{eurosym} 
 \usepackage{ragged2e}
 \usepackage{siunitx}
 \sisetup{locale = DE}
 \sisetup{detect-family}
 \DeclareSIUnit[number-unit-product = { } ]
-\EUR{€}
+	\EUR{EUR}
+
+%\DeclareSIUnit[number-unit-product = { } ]
+%\EUR{€}
+
+%\renewcommand{\baselinestretch}{0.9} 
+
 
 \usepackage{graphicx}
 \usepackage{xcolor}
 \definecolor{Myblack}{rgb}{.0,.0,.0}
 
-%\renewcommand\familydefault{\sfdefault} 
+\renewcommand\familydefault{\sfdefault} 
 \usepackage{titlesec}
 \defaultfontfeatures{Ligatures=TeX}
 \titleformat*{\section}{\large\bfseries\sffamily\color{Myblack}}
@@ -33,6 +41,9 @@
 {0pt}{0.7ex plus 1.5ex minus .2ex}{4.3ex plus .2ex}
 
 \usepackage{hyperref}
+
+%\newcommand{\slow}{\faHourglass}
+%\newcommand{\slow}{\faHourglass[2]}
 
 \newcommand{\slow}{\includegraphics[height=10pt]{gfx/hourglass.pdf}\xspace}
 \newcommand{\hotpepper}{\includegraphics[height=10pt]{gfx/hot_pepper.pdf}\xspace}
@@ -51,12 +62,30 @@
 #2\textsuperscript{ #3}
 \end{flushleft}
 \end{minipage}%
-\hfill\SI{#4}{\EUR}\\[0.3mm]}
+\hfill\SI{#4}{} \euro\\[0.8mm]}
 
 \titlespacing*{\section}{0pt}{1.5mm}{0mm}
 %\titlespacing*{<command>}{<left>}{<before-sep>}{<after-sep>}
 
-\input{allergene.tex}
+%\newcommand{\Phantasiename}[1]{{\sl{\textbf{#1}}}}
+\newcommand{\Phantasiename}[1]{{\sl{#1}}}
+
+% Allergen-Verzeichnis
+\newcommand{\Getreideprodukte}{a}
+\newcommand{\Fisch}{b}
+\newcommand{\Krebstiere}{c}
+\newcommand{\Schwefel}{d} 
+\newcommand{\Sellerie}{e} 
+\newcommand{\Laktose}{f} 
+\newcommand{\Sesamsamen}{g} 
+\newcommand{\Nuss}{h} 
+\newcommand{\Eier}{i} 
+\newcommand{\Lupinen}{j} 
+\newcommand{\Senf}{k} 
+\newcommand{\Soja}{l} 
+\newcommand{\Weichtiere}{m} 
+\newcommand{\Erdnuss}{n} 
+
 
 \usepackage[xspace]{ellipsis}
 \renewcommand{\ellipsisgap}{0.04em}
@@ -72,22 +101,23 @@
 }
 
 \begin{center}
-\includegraphics[width=\textwidth]{gfx/dragon_raw4_ready.jpg}\\[2mm]%
-\large{\textbf{Yen Yen - asiatische Spezialitäten}}%\includegraphics[width=0.5\textwidth]{gfx/asiatische_spez.png}%
-\end{center}%
+\includegraphics[width=\textwidth]{gfx/dragon_raw4_ready.jpg}%
 
-\begin{center}
-{\small Stand \today}\\[2mm]
+%{\small Stand \today}\\[2mm]
+\textbf{{\small Gültig ab 02.06.2021}}\\[2mm]
 %Format der Telefonnummer gem. Duden (falls mal einer fragt)
-%:) 
-Speisen zur Mitnahme und Tischreservierungen: \textbf{02241 1268772}\\[1mm]
-Montags Ruhetag\\[1mm]
+Speisen zur Mitnahme und Tischreservierungen: 
+
+\textbf{02241 1268772}\\[1mm]
+\vfill
+\textbf{Montag und Dienstag Ruhetag}\\[4mm]
 Für Ihre Feier bieten wir Ihnen gerne unseren \textbf{Partyservice} an.\\[2mm]
-Alle unsere Speisen werden von uns frisch hausgemacht und sind frei von Zusatzstoffen und Geschmacksverstärkern (Glutamat).\\[2mm]
-\slow = aufwändig, längere Zubereitungszeit\\
+%Alle unsere Speisen werden von uns frisch hausgemacht und sind frei von Zusatzstoffen und Geschmacksverstärkern (Glutamat).\\[2mm]
+Alle unsere Speisen werden von uns frisch hausgemacht und sind frei von Glutamat.\\[2mm]
+\slow = Aufwändig, längere Zubereitungszeit\\
 \hotpepper = leicht scharf \quad \quad \hotpepper\hotpepper = scharf
 \end{center}%
-
+\vfill
 \section*{Lage in der Troisdorfer Innenstadt}
 \begin{center}
 	\includegraphics[width=1.0\textwidth]{gfx/map/tdfcity}
@@ -115,8 +145,9 @@ nach EU-Lebensmittelinformationsverordnung:
 
 Informationen über Zutaten in unseren Speisen, die Allergien
 oder Unverträglichkeiten auslösen können, erhalten Sie auf Nachfrage
-auch bei unseren Mitarbeitern.\\
-\textbf{Gerne passt unser Koch das Rezept auf Ihre Bedürfnisse an.} %
+auch bei unseren Mitarbeitern.
+%\textbf{Gerne passt unser Koch das Rezept auf Ihre Bedürfnisse an.}\\
+%\textbf{Gerne passt unser Koch das Rezept auf Ihre Bedürfnisse an.} %
 %\vspace{4mm}
 %\newpage
 
